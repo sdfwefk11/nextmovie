@@ -5,6 +5,7 @@ interface MovieCardProps {
 }
 
 export function MovieCard({ movieImage }: MovieCardProps) {
+  console.log(movieImage);
   return (
     <div className="flex aspect-square items-center justify-center p-1">
       <Image
@@ -12,7 +13,7 @@ export function MovieCard({ movieImage }: MovieCardProps) {
         src={movieImage}
         height={600}
         width={600}
-        className="rounded-md"
+        className="rounded-xl"
       />
     </div>
   );

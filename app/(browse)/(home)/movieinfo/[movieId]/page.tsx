@@ -13,7 +13,7 @@ export default async function MovieDetail({ params }: MovieDetailProps) {
     };
   }
   return (
-    <div>
+    <div className="flex flex-col py-10 px-14">
       <Movie movieInfo={movieDetail} />
     </div>
   );
