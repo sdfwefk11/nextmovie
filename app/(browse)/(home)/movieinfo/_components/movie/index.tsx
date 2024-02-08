@@ -6,6 +6,7 @@ interface MovieProps {
 }
 
 export function Movie({ movieInfo }: MovieProps) {
+  //dfdfdf
   return (
     <div className="flex flex-col gap-y-4 p-9">
       <div className="flex items-center justify-between">
