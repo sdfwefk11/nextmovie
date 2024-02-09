@@ -1,15 +1,17 @@
 import { MovieDetailTypes } from "@/fetchs/fetch-movie-detail";
 import { MovieImage } from "./movie-image";
 import { MovieInfo } from "./movie-info";
+import { getVideos } from "@/actions/getVideos";
 
 interface MovieProps {
   movieInfo: MovieDetailTypes;
 }
 
-export function Movie({ movieInfo }: MovieProps) {
+export async function Movie({ movieInfo }: MovieProps) {
+  const videos = await getVideos(movieInfo.id + "");
   return (
     <div className="grid">
-      <div className="flex flex-col xl:justify-between xl:flex-row justify-center items-center xl:items-start">
+      <div className="relative flex flex-col xl:justify-between xl:flex-row justify-center items-center xl:items-start">
         <MovieImage backdropPath={movieInfo.poster_path} />
         <div className="p-8">
           <MovieInfo
@@ -17,13 +19,13 @@ export function Movie({ movieInfo }: MovieProps) {
             homepage={movieInfo.homepage}
             language={movieInfo.original_language}
             title={movieInfo.original_title}
-            popularity={movieInfo.popularity}
             releaseDate={movieInfo.release_date}
-            runtime={movieInfo.runtime}
+            initialRuntime={movieInfo.runtime}
             voteAverage={movieInfo.vote_average}
             status={movieInfo.status}
             tagline={movieInfo.tagline}
-            logo={movieInfo.production_companies}
+            initialLogo={movieInfo.production_companies}
+            videos={videos}
           />
         </div>
       </div>

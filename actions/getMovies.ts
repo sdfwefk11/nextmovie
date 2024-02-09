@@ -6,6 +6,6 @@ export async function getMovies() {
     const movies = await fetchMovies();
     return movies;
   } catch {
-    throw new Error("Something went wrong");
+    throw new Error("Internal Error");
   }
 }

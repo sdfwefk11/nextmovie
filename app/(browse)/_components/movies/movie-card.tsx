@@ -5,7 +5,6 @@ interface MovieCardProps {
 }
 
 export function MovieCard({ movieImage }: MovieCardProps) {
-  console.log(movieImage);
   return (
     <div className="flex aspect-square items-center justify-center p-1">
       <Image
