@@ -33,8 +33,8 @@ export function MovieInfo({
   console.log(adult);
   return (
     <div className="space-y-10">
-      <div className="flex flex-col gap-x-5 justify-center items-center gap-y-10 xl:flex-row 2xl:flex-col xl:items-center">
-        <div className="flex flex-col xl:flex-row justify-between items-center w-full">
+      <div className="flex flex-col gap-x-5 justify-center items-center gap-y-10 xl:flex-row 2xl:flex-col bg-red-500">
+        <div className="flex flex-col xl:flex-row items-center w-full">
           <h1 className="font-semibold text-4xl">{title}</h1>
           <Button
             variant="link"
@@ -44,7 +44,7 @@ export function MovieInfo({
             <a href={homepage}>{`About ${title}`}</a>
           </Button>
         </div>
-        <div className="grid grid-cols-4 gap-x-2 gap-y-2 xl:grid-cols-1 2xl:grid-cols-4 justify-center">
+        <div className="grid grid-cols-4 gap-x-2 gap-y-2 xl:grid-cols-1 2xl:grid-cols-4 justify-center items-end">
           {logo.map((data) => {
             if (data.logo_path.includes("null")) {
               return null;
