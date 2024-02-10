@@ -5,7 +5,6 @@ import { revalidatePath } from "next/cache";
 export async function getVideos(movieId: string) {
   try {
     const videos = await fetchYoutubeIframe(movieId);
-    revalidatePath(`/movieinfo/${movieId}`);
     return videos;
   } catch {
     throw new Error("Internal Error");

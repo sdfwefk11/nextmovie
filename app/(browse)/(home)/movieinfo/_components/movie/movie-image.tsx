@@ -40,7 +40,7 @@ export function MovieImage({ backdropPath }: MovieImageProps) {
 export function MovieImageSkeleton() {
   return (
     <div className="flex items-center justify-center">
-      <Skeleton className="w-[430px] h-[630px] xl:w-[620px] xl:h-[900px]" />
+      <Skeleton className="w-[430px] h-[630px] sm:w-[620px] sm:h-[900px]" />
     </div>
   );
 }

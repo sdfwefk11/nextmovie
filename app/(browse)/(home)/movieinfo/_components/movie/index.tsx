@@ -39,7 +39,7 @@ export function MovieSkeleton() {
     <div className="relative grid w-full">
       <div className="flex flex-col xl:justify-between xl:flex-row justify-center items-center xl:items-start">
         <MovieImageSkeleton />
-        <div className="relative right-0 p-8 w-full sm:w-1/2 xl:w-[600px] 2xl:w-[700px] 2xl:ml-10">
+        <div className="relative right-0 p-8 w-full sm:w-[620px] xl:w-[600px] 2xl:w-[700px] 2xl:ml-10">
           <MovieInfoSkeleton />
         </div>
       </div>

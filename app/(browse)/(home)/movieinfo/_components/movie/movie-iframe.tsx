@@ -31,7 +31,7 @@ export function MovieIframe({ videos }: MovieIframeProps) {
 export function MovieIframeSkeleton() {
   return (
     <div className="flex items-center justify-center">
-      <Skeleton className="w-full h-72" />
+      <Skeleton className="w-full h-72 2xl:h-[400px]" />
     </div>
   );
 }
