@@ -9,9 +9,7 @@ export default async function Home() {
   return (
     <Suspense fallback={<MoviesSkeleton />}>
       <div>
-        <div className="flex flex-col items-center justify-center pt-12 pb-20">
-          <Movies movies={movies} />
-        </div>
+        <div className="flex flex-col items-center justify-center pt-12 pb-20"></div>
         <Separator />
         <Footer />
       </div>
