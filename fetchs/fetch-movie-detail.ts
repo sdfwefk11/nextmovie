@@ -47,7 +47,7 @@ export interface MovieDetailTypes {
 
 export async function fetchMovieDetail(movieId: string) {
   const data = await fetch(
-    `${process.env.NEXT_PUBLIC_FETCH_BASE_URL}/${movieId}`
+    `${process.env.NEXT_PUBLIC_FETCH_BASE_URL!}/${movieId}`
   );
   const movieDetail = await data.json();
   return movieDetail as MovieDetailTypes;
