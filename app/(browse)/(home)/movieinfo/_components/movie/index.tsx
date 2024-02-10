@@ -1,6 +1,6 @@
 import { MovieDetailTypes } from "@/fetchs/fetch-movie-detail";
-import { MovieImage } from "./movie-image";
-import { MovieInfo } from "./movie-info";
+import { MovieImage, MovieImageSkeleton } from "./movie-image";
+import { MovieInfo, MovieInfoSkeleton } from "./movie-info";
 import { getVideos } from "@/actions/getVideos";
 
 interface MovieProps {
@@ -13,7 +13,7 @@ export async function Movie({ movieInfo }: MovieProps) {
     <div className="grid">
       <div className="relative flex flex-col xl:justify-between xl:flex-row justify-center items-center xl:items-start">
         <MovieImage backdropPath={movieInfo.poster_path} />
-        <div className="p-8">
+        <div className="p-8 w-full md:w-[680px] xl:w-1/2">
           <MovieInfo
             adult={movieInfo.adult}
             homepage={movieInfo.homepage}
@@ -26,10 +26,23 @@ export async function Movie({ movieInfo }: MovieProps) {
             tagline={movieInfo.tagline}
             initialLogo={movieInfo.production_companies}
             videos={videos}
+            overview={movieInfo.overview}
           />
         </div>
       </div>
-      <div>{movieInfo.overview}</div>
+    </div>
+  );
+}
+
+export function MovieSkeleton() {
+  return (
+    <div className="relative grid w-full">
+      <div className="flex flex-col xl:justify-between xl:flex-row justify-center items-center xl:items-start">
+        <MovieImageSkeleton />
+        <div className="relative right-0 p-8 w-full sm:w-1/2 xl:w-[600px] 2xl:w-[700px] 2xl:ml-10">
+          <MovieInfoSkeleton />
+        </div>
+      </div>
     </div>
   );
 }

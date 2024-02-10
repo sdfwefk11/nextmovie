@@ -1,5 +1,6 @@
 import { getMovieInfo } from "@/actions/getMovieInfo";
-import { Movie } from "../_components/movie";
+import { Movie, MovieSkeleton } from "../_components/movie";
+import { Suspense } from "react";
 
 interface MovieDetailProps {
   params: { movieId: string };
@@ -7,14 +8,11 @@ interface MovieDetailProps {
 
 export default async function MovieDetail({ params }: MovieDetailProps) {
   const movieDetail = await getMovieInfo(params.movieId);
-  if (!movieDetail) {
-    return {
-      /* TODO: 스켈레톤 작업 */
-    };
-  }
   return (
-    <div className="flex flex-col py-10 px-14">
-      <Movie movieInfo={movieDetail} />
+    <div className="flex flex-col py-10 px-3 md:px-14 select-none">
+      <Suspense fallback={<MovieSkeleton />}>
+        <Movie movieInfo={movieDetail} />
+      </Suspense>
     </div>
   );
 }

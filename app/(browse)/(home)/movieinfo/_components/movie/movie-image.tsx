@@ -1,4 +1,5 @@
 "use client";
+import { Skeleton } from "@/components/ui/skeleton";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { useEffect, useState } from "react";
@@ -32,6 +33,14 @@ export function MovieImage({ backdropPath }: MovieImageProps) {
           blur && "blur-2xl scale-95"
         )}
       />
+    </div>
+  );
+}
+
+export function MovieImageSkeleton() {
+  return (
+    <div className="flex items-center justify-center">
+      <Skeleton className="w-[430px] h-[630px] xl:w-[620px] xl:h-[900px]" />
     </div>
   );
 }
