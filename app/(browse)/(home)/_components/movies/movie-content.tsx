@@ -21,7 +21,7 @@ export function MovieContent({ movies }: MoviesProps) {
   const isClient = useIsClient();
 
   if (!isClient) {
-    return null;
+    return <div></div>;
   }
 
   return (
