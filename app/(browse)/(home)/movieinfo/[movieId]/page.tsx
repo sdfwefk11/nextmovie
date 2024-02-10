@@ -1,6 +1,6 @@
 import { getMovieInfo } from "@/actions/getMovieInfo";
-import { Movie, MovieSkeleton } from "../_components/movie";
 import { Suspense } from "react";
+import { Movie, MovieSkeleton } from "./_components/movie";
 
 interface MovieDetailProps {
   params: { movieId: string };

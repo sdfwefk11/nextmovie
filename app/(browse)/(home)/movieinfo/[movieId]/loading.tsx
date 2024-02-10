@@ -1,4 +1,4 @@
-import { MovieSkeleton } from "../_components/movie";
+import { MovieSkeleton } from "./_components/movie";
 
 export default function Loading() {
   return (

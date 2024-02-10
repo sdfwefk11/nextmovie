@@ -1,7 +1,7 @@
 import { MovieDetailTypes } from "@/fetchs/fetch-movie-detail";
+import { getVideos } from "@/actions/getVideos";
 import { MovieImage, MovieImageSkeleton } from "./movie-image";
 import { MovieInfo, MovieInfoSkeleton } from "./movie-info";
-import { getVideos } from "@/actions/getVideos";
 
 interface MovieProps {
   movieInfo: MovieDetailTypes;
