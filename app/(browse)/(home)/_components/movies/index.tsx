@@ -5,6 +5,9 @@ import { Separator } from "@/components/ui/separator";
 
 export async function Movies() {
   const movies = await getMovies();
+  if (!movies) {
+    return null;
+  }
   return <MovieContent movies={movies} />;
 }
 
