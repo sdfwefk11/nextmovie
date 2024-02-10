@@ -1,14 +1,14 @@
 import { MovieDetailTypes } from "@/fetchs/fetch-movie-detail";
 import { MovieImage, MovieImageSkeleton } from "./movie-image";
 import { MovieInfo, MovieInfoSkeleton } from "./movie-info";
-import { fetchYoutubeIframe } from "@/fetchs/fetch-youtube-iframe";
+import { getVideos } from "@/actions/getVideos";
 
 interface MovieProps {
   movieInfo: MovieDetailTypes;
 }
 
 export async function Movie({ movieInfo }: MovieProps) {
-  const videos = await fetchYoutubeIframe(movieInfo.id);
+  const videos = await getVideos(movieInfo.id);
   return (
     <div className="grid">
       <div className="relative flex flex-col xl:justify-between xl:flex-row justify-center items-center xl:items-start">

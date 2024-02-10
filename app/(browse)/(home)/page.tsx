@@ -3,7 +3,6 @@ import { Movies, MoviesSkeleton } from "./_components/movies";
 import { Separator } from "@/components/ui/separator";
 import { Footer } from "./_components/footer";
 import { getMovies } from "@/actions/getMovies";
-import { fetchMovies } from "@/fetchs/fetch-movies";
 
 export default async function Home() {
   const movies = await getMovies();
