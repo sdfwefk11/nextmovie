@@ -11,10 +11,10 @@ export interface FetchYoutubeIframeTypes {
   id: string;
 }
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
-
 export async function fetchYoutubeIframe(movieId: number) {
-  const data = await fetch(`${BASE_URL}/${movieId}/videos`);
+  const data = await fetch(
+    `https://nomad-movies.nomadcoders.workers.dev/movies/${movieId}/videos`
+  );
   const videos = await data.json();
   return videos as FetchYoutubeIframeTypes[];
 }

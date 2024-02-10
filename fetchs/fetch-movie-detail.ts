@@ -45,10 +45,10 @@ export interface MovieDetailTypes {
   vote_count: number;
 }
 
-const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
-
 export async function fetchMovieDetail(movieId: string) {
-  const data = await fetch(`${BASE_URL}/${movieId}`);
+  const data = await fetch(
+    `https://nomad-movies.nomadcoders.workers.dev/movies/${movieId}`
+  );
   const movieDetail = await data.json();
   return movieDetail as MovieDetailTypes;
 }
