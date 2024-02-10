@@ -2,9 +2,10 @@ import { getMovies } from "@/actions/getMovies";
 import { Movies } from "../_components/movies";
 import { Separator } from "@/components/ui/separator";
 import { Footer } from "../_components/footer";
+import { fetchMovies } from "@/fetchs/fetch-movies";
 
 export default async function Home() {
-  const movies = await getMovies();
+  const movies = await fetchMovies();
   return (
     <div>
       <div className="flex flex-col items-center justify-center pt-12 pb-20">
