@@ -11,12 +11,19 @@ import { AllMovieTypes } from "@/fetchs/fetch-movies";
 import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
 import { MovieCard } from "./movie-card";
+import { useIsClient } from "usehooks-ts";
 
 interface MoviesProps {
   movies: AllMovieTypes[];
 }
 
 export function MovieContent({ movies }: MoviesProps) {
+  const isClient = useIsClient();
+
+  if (!isClient) {
+    return null;
+  }
+
   return (
     <Carousel
       className="w-full max-w-xs md:max-w-md"
