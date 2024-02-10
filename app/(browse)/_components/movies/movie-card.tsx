@@ -12,7 +12,7 @@ export function MovieCard({ movieImage }: MovieCardProps) {
         src={movieImage}
         height={600}
         width={600}
-        className="rounded-md"
+        className="rounded-xl"
       />
     </div>
   );

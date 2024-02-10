@@ -22,7 +22,7 @@ export function Movies({ movies }: MoviesProps) {
       className="w-full max-w-xs md:max-w-md"
       plugins={[
         Autoplay({
-          delay: 2000,
+          delay: 3000,
           stopOnMouseEnter: true,
           stopOnInteraction: false,
         }),

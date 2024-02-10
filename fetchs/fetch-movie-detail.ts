@@ -1,5 +1,5 @@
 type GenresTypes = { id: number; name: string };
-type ProductionCompaniesTypes = {
+export type ProductionCompaniesTypes = {
   id: number;
   logo_path: string;
   name: string;

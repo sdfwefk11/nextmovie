@@ -3,9 +3,10 @@ import { fetchMovieDetail } from "@/fetchs/fetch-movie-detail";
 
 export async function getMovieInfo(movieId: string) {
   try {
+    await new Promise((resolve) => setTimeout(resolve, 10000));
     const movieDetail = await fetchMovieDetail(movieId);
     return movieDetail;
   } catch {
-    throw new Error("Something went wrong");
+    throw new Error("Internal Error");
   }
 }

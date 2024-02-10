@@ -8,7 +8,7 @@ export default function HomeLayout({ children }: HomeLayoutProps) {
   return (
     <>
       <Navbar />
-      <div className="pt-20 px-3">{children}</div>
+      <div className="pt-20 px-3 select-none">{children}</div>
     </>
   );
 }
