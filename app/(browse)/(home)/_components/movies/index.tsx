@@ -27,13 +27,13 @@ export function Movies({ movies }: MoviesProps) {
   return (
     <Carousel
       className="w-full max-w-xs md:max-w-md"
-      plugins={[
-        Autoplay({
-          delay: 3000,
-          stopOnMouseEnter: true,
-          stopOnInteraction: false,
-        }),
-      ]}
+      // plugins={[
+      //   Autoplay({
+      //     delay: 3000,
+      //     stopOnMouseEnter: true,
+      //     stopOnInteraction: false,
+      //   }),
+      // ]}
     >
       <CarouselContent>
         {movies.map((movie) => (
