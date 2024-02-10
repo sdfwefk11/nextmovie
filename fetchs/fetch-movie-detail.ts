@@ -46,7 +46,9 @@ export interface MovieDetailTypes {
 }
 
 export async function fetchMovieDetail(movieId: string) {
-  const data = await fetch(`${process.env.FETCH_BASE_URL!}/${movieId}`);
+  const data = await fetch(
+    `${"https://nomad-movies.nomadcoders.workers.dev/movies"}/${movieId}`
+  );
   const movieDetail = await data.json();
   return movieDetail as MovieDetailTypes;
 }
