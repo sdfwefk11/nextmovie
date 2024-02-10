@@ -13,9 +13,7 @@ export interface AllMovieTypes {
 }
 
 export async function fetchMovies() {
-  const data = await fetch(
-    "https://nomad-movies.nomadcoders.workers.dev/movies"
-  );
+  const data = await fetch(`${process.env.NEXT_PUBLIC_FETCH_BASE_URL}`);
   const movies = await data.json();
   return movies as AllMovieTypes[];
 }
