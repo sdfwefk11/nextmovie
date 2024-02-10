@@ -33,7 +33,7 @@ export function Movies({ movies }: MoviesProps) {
       <CarouselContent>
         {movies.map((movie) => (
           <CarouselItem key={movie.id}>
-            <Link href={`/movieinfo/${movie.id}`}>
+            <Link prefetch href={`/movieinfo/${movie.id}`}>
               <div>
                 <Card>
                   <MovieCard movieImage={movie.poster_path} />
