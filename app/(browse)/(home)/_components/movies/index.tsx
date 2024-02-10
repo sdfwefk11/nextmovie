@@ -10,7 +10,6 @@ import {
 import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
 import { MovieCard } from "./movie-card";
-import { useIsClient } from "usehooks-ts";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Separator } from "@/components/ui/separator";
 import { AllMovieTypes } from "@/fetchs/fetch-movies";
@@ -20,10 +19,6 @@ interface MoviesProps {
 }
 
 export function Movies({ movies }: MoviesProps) {
-  const isClient = useIsClient();
-  if (!isClient) {
-    return <div></div>;
-  }
   return (
     <Carousel
       className="w-full max-w-xs md:max-w-md"
