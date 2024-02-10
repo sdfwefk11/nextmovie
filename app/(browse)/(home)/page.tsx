@@ -7,7 +7,7 @@ import { fetchMovies } from "@/fetchs/fetch-movies";
 import Link from "next/link";
 
 export default async function Home() {
-  const movies = await fetchMovies();
+  // const movies = await fetchMovies();
   return (
     <div>
       <Link href={"/movieinfo/787699"}>click</Link>
