@@ -6,7 +6,7 @@ import { getMovies } from "@/actions/getMovies";
 import { fetchMovies } from "@/fetchs/fetch-movies";
 
 export default async function Home() {
-  const movies = await fetchMovies();
+  const movies = await getMovies();
   return (
     <Suspense fallback={<MoviesSkeleton />}>
       <div>
