@@ -12,8 +12,10 @@ export interface AllMovieTypes {
   vote_count: number;
 }
 
+const BASE_URL = process.env.NEXT_PUBLIC_API_URL;
+
 export async function fetchMovies() {
-  const data = await fetch(process.env.NEXT_PUBLIC_API_URL!);
+  const data = await fetch(BASE_URL!);
   const movies = await data.json();
   return movies as AllMovieTypes[];
 }
