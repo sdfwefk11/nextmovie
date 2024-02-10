@@ -8,7 +8,7 @@ interface MovieProps {
 }
 
 export async function Movie({ movieInfo }: MovieProps) {
-  const videos = await fetchYoutubeIframe(movieInfo.id);
+  const videos = await fetchYoutubeIframe(movieInfo.id ? movieInfo.id : 0);
   return (
     <div className="grid">
       <div className="relative flex flex-col xl:justify-between xl:flex-row justify-center items-center xl:items-start">

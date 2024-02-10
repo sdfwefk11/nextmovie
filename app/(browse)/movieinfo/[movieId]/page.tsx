@@ -8,7 +8,9 @@ interface MovieDetailProps {
 }
 
 export default async function MovieDetail({ params }: MovieDetailProps) {
-  const movieDetail = await fetchMovieDetail(params.movieId);
+  const movieDetail = await fetchMovieDetail(
+    params.movieId ? params.movieId : ""
+  );
   return (
     <div className="flex flex-col py-10 px-3 md:px-14 select-none">
       <Suspense fallback={<MovieSkeleton />}>
