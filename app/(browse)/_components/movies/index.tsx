@@ -11,6 +11,8 @@ import { AllMovieTypes } from "@/fetchs/fetch-movies";
 import { MovieCard } from "./movie-card";
 import { Card } from "@/components/ui/card";
 import Link from "next/link";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Separator } from "@/components/ui/separator";
 
 interface MoviesProps {
   movies: AllMovieTypes[];
@@ -44,5 +46,22 @@ export function Movies({ movies }: MoviesProps) {
       <CarouselPrevious />
       <CarouselNext />
     </Carousel>
+  );
+}
+
+export function MoviesSkeleton() {
+  return (
+    <>
+      <div className="flex flex-col justify-center items-center pt-12 pb-20">
+        <Skeleton className="w-[330px] h-[463px] rounded-xl md:w-[460px] md:h-[670px]" />
+      </div>
+      <div className="flex flex-col justify-center items-center">
+        <Separator />
+        <div className="p-8 space-y-4 justify-center items-center flex flex-col">
+          <Skeleton className="w-[340px] h-3" />
+          <Skeleton className="w-[370px] h-3" />
+        </div>
+      </div>
+    </>
   );
 }

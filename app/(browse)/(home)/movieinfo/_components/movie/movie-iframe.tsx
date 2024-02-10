@@ -13,7 +13,7 @@ export function MovieIframe({ videos }: MovieIframeProps) {
       data.name.toLowerCase().includes("official")
     );
   }, [videos]);
-  if (!video) {
+  if (!video[0]) {
     return null;
   }
   return (
