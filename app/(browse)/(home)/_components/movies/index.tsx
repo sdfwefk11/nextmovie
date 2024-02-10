@@ -1,7 +1,7 @@
-import { Skeleton } from "@/components/ui/skeleton";
-import { Separator } from "@/components/ui/separator";
 import { getMovies } from "@/actions/getMovies";
 import { MovieContent } from "./movie-content";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Separator } from "@/components/ui/separator";
 
 export async function Movies() {
   const movies = await getMovies();
