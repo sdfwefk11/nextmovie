@@ -25,32 +25,33 @@ export function Movies({ movies }: MoviesProps) {
     return <div></div>;
   }
   return (
-    <Carousel
-      className="w-full max-w-xs md:max-w-md"
-      // plugins={[
-      //   Autoplay({
-      //     delay: 3000,
-      //     stopOnMouseEnter: true,
-      //     stopOnInteraction: false,
-      //   }),
-      // ]}
-    >
-      <CarouselContent>
-        {movies.map((movie) => (
-          <CarouselItem key={movie.id}>
-            <Link href={`/movieinfo/${movie.id}`}>
-              <div>
-                <Card>
-                  <MovieCard movieImage={movie.poster_path} />
-                </Card>
-              </div>
-            </Link>
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-      <CarouselPrevious />
-      <CarouselNext />
-    </Carousel>
+    // <Carousel
+    //   className="w-full max-w-xs md:max-w-md"
+    //   plugins={[
+    //     Autoplay({
+    //       delay: 3000,
+    //       stopOnMouseEnter: true,
+    //       stopOnInteraction: false,
+    //     }),
+    //   ]}
+    // >
+    //   <CarouselContent>
+    //     {movies.map((movie) => (
+    //       <CarouselItem key={movie.id}>
+    //         <Link href={`/movieinfo/${movie.id}`}>
+    //           <div>
+    //             <Card>
+    //               <MovieCard movieImage={movie.poster_path} />
+    //             </Card>
+    //           </div>
+    //         </Link>
+    //       </CarouselItem>
+    //     ))}
+    //   </CarouselContent>
+    //   <CarouselPrevious />
+    //   <CarouselNext />
+    // </Carousel>
+    <div>df</div>
   );
 }
 
