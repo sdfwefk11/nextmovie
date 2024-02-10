@@ -9,7 +9,7 @@ interface MovieIframeProps {
 
 export function MovieIframe({ videos }: MovieIframeProps) {
   const video = useMemo(() => {
-    return videos?.filter((data) =>
+    return videos.filter((data) =>
       data.name.toLowerCase().includes("official")
     );
   }, [videos]);
