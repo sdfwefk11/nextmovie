@@ -7,7 +7,6 @@ interface MovieDetailProps {
 }
 
 export default async function MovieDetail({ params }: MovieDetailProps) {
-  //test
   const movieDetail = await getMovieInfo(params.movieId);
   return (
     <div className="flex flex-col py-10 px-3 md:px-14 select-none">
