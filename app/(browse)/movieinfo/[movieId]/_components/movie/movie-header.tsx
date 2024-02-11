@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
 import { useMemo } from "react";
 import { ProductionCompaniesTypes } from "@/fetchs/fetch-movie-detail";
 import { Skeleton } from "@/components/ui/skeleton";
@@ -18,11 +17,12 @@ export function MovieHeader({ initialLogo, homepage, title }: MovieInfoProps) {
 
   return (
     <div className="flex flex-col gap-x-5 justify-center items-center gap-y-10 xl:flex-row 2xl:flex-col 2xl:items-end">
-      <div className="flex flex-col xl:flex-row items-center w-full justify-between text-center">
-        <h1 className="font-semibold text-4xl">{title}</h1>
-        <Button variant="link" type="button" className="text-muted-foreground">
-          <a href={homepage}>{`About ${title}`}</a>
-        </Button>
+      <div className="flex flex-col xl:flex-row items-center justify-between text-center overflow-hidden 2xl:w-full gap-y-2">
+        <h1 className="relative font-semibold text-4xl">{title}</h1>
+        <a
+          href={homepage}
+          className="underline-offset-4 hover:underline text-muted-foreground text-sm font-medium"
+        >{`About ${title}`}</a>
       </div>
       <div className="grid grid-cols-4 gap-x-2 gap-y-2 xl:grid-cols-1 2xl:grid-cols-4 justify-center">
         {logo.map((data) => (
