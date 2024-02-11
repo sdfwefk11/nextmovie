@@ -4,7 +4,7 @@ import { revalidatePath } from "next/cache";
 
 export async function getVideos(movieId: number) {
   try {
-    await new Promise((resolve) => setTimeout(resolve, 500));
+    // await new Promise((resolve) => setTimeout(resolve, 500));
     const videos = await fetchYoutubeIframe(movieId);
     revalidatePath(`/movieinfo/${movieId}`);
     return videos;
