@@ -22,7 +22,9 @@ export function MovieHeader({ initialLogo, homepage, title }: MovieInfoProps) {
         <a
           href={homepage}
           className="underline-offset-4 hover:underline text-muted-foreground text-sm font-medium"
-        >{`About ${title}`}</a>
+        >
+          {`About · ${title}`}
+        </a>
       </div>
       <div className="grid grid-cols-4 gap-x-2 gap-y-2 xl:grid-cols-1 2xl:grid-cols-4 justify-center">
         {logo.map((data) => (
