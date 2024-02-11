@@ -37,7 +37,7 @@ export function MovieInfo({
   overview,
 }: MovieInfoProps) {
   return (
-    <div className="space-y-10">
+    <div className="space-y-10 flex flex-col">
       <MovieHeader
         title={title}
         homepage={homepage}
