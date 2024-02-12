@@ -16,6 +16,7 @@ export async function Movie({ movieInfo }: MovieProps) {
         <div className="p-8 w-full md:w-[680px] xl:w-1/2">
           <MovieInfo
             adult={movieInfo.adult}
+            id={movieInfo.id}
             homepage={movieInfo.homepage}
             language={movieInfo.original_language}
             title={movieInfo.original_title}

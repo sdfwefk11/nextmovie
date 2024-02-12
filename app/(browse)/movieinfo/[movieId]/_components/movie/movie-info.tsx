@@ -6,6 +6,7 @@ import { MovieIframe, MovieIframeSkeleton } from "./movie-iframe";
 import { MovieSubInfo, MovieSubInfoSkeleton } from "./movie-sub-info";
 import { MovieHeader, MovieHeaderSkeleton } from "./movie-header";
 import { MovieTagline, MovieTaglineSkeleton } from "./movie-tagline";
+import { getSimilar } from "@/actions/getSimilar";
 
 interface MovieInfoProps {
   adult: boolean;
@@ -20,9 +21,10 @@ interface MovieInfoProps {
   initialLogo: ProductionCompaniesTypes[];
   videos: FetchYoutubeIframeTypes[];
   overview: string;
+  id: number;
 }
 
-export function MovieInfo({
+export async function MovieInfo({
   adult,
   homepage,
   language,
@@ -35,13 +37,16 @@ export function MovieInfo({
   initialLogo,
   videos,
   overview,
+  id,
 }: MovieInfoProps) {
+  const similar = await getSimilar(id);
   return (
     <div className="space-y-10 flex flex-col">
       <MovieHeader
         title={title}
         homepage={homepage}
         initialLogo={initialLogo}
+        initialSimilar={similar || null}
       />
       <Separator />
       <MovieSubInfo

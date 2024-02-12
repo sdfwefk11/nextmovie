@@ -9,10 +9,10 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import Link from "next/link";
-import { MovieCard } from "./movie-card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Separator } from "@/components/ui/separator";
 import { AllMovieTypes } from "@/fetchs/fetch-movies";
+import { MovieCard } from "@/components/movie/movie-card";
 
 interface MoviesProps {
   movies: AllMovieTypes[];
