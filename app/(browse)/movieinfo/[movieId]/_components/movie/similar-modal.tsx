@@ -50,10 +50,7 @@ export function SimilarModal({
                       showModal && "blur-none scale-95"
                     )}
                   >
-                    <MovieCard
-                      movieImage={movie.poster_path}
-                      movieTitle={movie.title}
-                    />
+                    <MovieCard movieImage={movie.poster_path} />
                   </Card>
                 </div>
               </Link>

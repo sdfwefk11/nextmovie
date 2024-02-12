@@ -2,7 +2,6 @@ import Image from "next/image";
 
 interface MovieCardProps {
   movieImage: string;
-  movieTitle: string;
 }
 
 export function MovieCard({ movieImage }: MovieCardProps) {
