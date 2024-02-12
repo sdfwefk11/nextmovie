@@ -31,7 +31,6 @@ export function MovieHeader({
       return !mutate.includes("null");
     });
   }, [initialSimilar]);
-  console.log(similar);
   const openModal = () => {
     setShowModal(true);
   };
@@ -40,9 +39,6 @@ export function MovieHeader({
     if (event.target === event.currentTarget) {
       setShowModal(false);
     }
-  };
-  const handleMouseUp = (event: React.MouseEvent<HTMLDivElement>) => {
-    event.stopPropagation();
   };
   return (
     <>
@@ -88,7 +84,6 @@ export function MovieHeader({
         similar={similar}
         showModal={showModal}
         handleOutsideClick={handleOutsideClick}
-        handleMouseUp={handleMouseUp}
       />
     </>
   );
