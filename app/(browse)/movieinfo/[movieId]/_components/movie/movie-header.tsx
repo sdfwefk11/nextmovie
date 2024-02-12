@@ -16,8 +16,8 @@ export function MovieHeader({ initialLogo, homepage, title }: MovieInfoProps) {
   }, [initialLogo]);
 
   return (
-    <div className="flex flex-col gap-x-5 justify-center items-center gap-y-10 xl:flex-row 2xl:flex-col 2xl:items-end">
-      <div className="flex flex-col xl:flex-row items-center justify-between text-center overflow-hidden w-full gap-y-2">
+    <div className="flex flex-col gap-x-5 justify-center items-center  gap-y-10 xl:flex-row 2xl:flex-col 2xl:items-end">
+      <div className="flex flex-col xl:flex-row items-center justify-between text-center w-full gap-y-2">
         <h1 className="relative font-semibold text-4xl">{title}</h1>
         <a
           href={homepage}
@@ -39,6 +39,7 @@ export function MovieHeader({ initialLogo, homepage, title }: MovieInfoProps) {
           </div>
         ))}
       </div>
+      <div>Similar</div>
     </div>
   );
 }
