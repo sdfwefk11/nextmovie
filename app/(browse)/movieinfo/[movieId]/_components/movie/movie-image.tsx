@@ -24,12 +24,13 @@ export function MovieImage({ backdropPath }: MovieImageProps) {
         className="absolute w-full h-full blur-0"
       ></div>
       <Image
+        priority
         alt="movie"
         src={backdropPath}
         width={600}
         height={100}
         className={cn(
-          "rounded-xl duration-700 ease-in-out ",
+          "rounded-xl duration-700 ease-in-out w-auto h-auto",
           blur && "blur-2xl scale-95"
         )}
       />

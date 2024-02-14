@@ -23,10 +23,10 @@ export function PreviewImage({ previewImg }: PreviewImageProps) {
     <>
       <div
         onClick={handleImgClick}
-        className="relative flex items-center group cursor-pointer"
+        className="relative flex items-center cursor-pointer group"
       >
         <MovieCard width={200} height={300} movieImage={previewImg} />
-        <div className="absolute top-2 right-2">
+        <div className="absolute w-full h-full flex justify-end p-2 bg-black rounded-lg bg-opacity-0 hover:bg-opacity-35 transition-all">
           {isImageUrlExist && (
             <EnterFullScreenIcon
               className={cn("w-4 h-4 group-hover:scale-125 transition-all")}
@@ -47,7 +47,7 @@ export function PreviewImage({ previewImg }: PreviewImageProps) {
           )}
         >
           <div className="relative group">
-            <MovieCard width={1000} height={500} movieImage={previewImg} />
+            <MovieCard width={1000} height={100} movieImage={previewImg} />
             <div onClick={handleImgClick} className="absolute right-2 top-2">
               {isImageUrlExist && (
                 <ExitFullScreenIcon
