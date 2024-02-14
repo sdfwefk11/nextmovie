@@ -5,7 +5,6 @@ interface MovieSubInfoProps {
   voteAverage: number;
   releaseDate: string;
   adult: boolean;
-  status: string;
   initialRuntime: number;
 }
 
@@ -15,7 +14,6 @@ export function MovieSubInfo({
   releaseDate,
   adult,
   initialRuntime,
-  status,
 }: MovieSubInfoProps) {
   const runtimeHour = Math.floor(initialRuntime / 60);
   const runtimeMinute = initialRuntime % 60;
@@ -32,8 +30,6 @@ export function MovieSubInfo({
         <span>{releaseDate}</span>
         <p>·</p>
         <span>{`${runtimeHour}H ${runtimeMinute}M`}</span>
-        <p>·</p>
-        <span>{status}</span>
       </div>
     </div>
   );
