@@ -28,6 +28,7 @@ export async function Movie({ movieInfo }: MovieProps) {
             initialLogo={movieInfo.production_companies}
             videos={videos}
             overview={movieInfo.overview}
+            backdropPath={movieInfo.backdrop_path}
           />
         </div>
       </div>

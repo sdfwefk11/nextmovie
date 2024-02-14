@@ -7,6 +7,7 @@ import { MovieSubInfo, MovieSubInfoSkeleton } from "./movie-sub-info";
 import { MovieHeader, MovieHeaderSkeleton } from "./movie-header";
 import { MovieTagline, MovieTaglineSkeleton } from "./movie-tagline";
 import { getSimilar } from "@/actions/getSimilar";
+import { PreviewImage } from "./preview-image";
 
 interface MovieInfoProps {
   adult: boolean;
@@ -22,6 +23,7 @@ interface MovieInfoProps {
   videos: FetchYoutubeIframeTypes[];
   overview: string;
   id: number;
+  backdropPath: string;
 }
 
 export async function MovieInfo({
@@ -38,6 +40,7 @@ export async function MovieInfo({
   videos,
   overview,
   id,
+  backdropPath,
 }: MovieInfoProps) {
   const similar = await getSimilar(id);
   return (
@@ -49,6 +52,7 @@ export async function MovieInfo({
         initialSimilar={similar || null}
       />
       <Separator />
+      <PreviewImage previewImg={backdropPath} />
       <MovieSubInfo
         language={language}
         voteAverage={voteAverage}
