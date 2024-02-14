@@ -5,6 +5,7 @@ interface MovieCardProps {
   movieImage: string;
   height: number;
   width: number;
+  isPreview?: boolean;
 }
 
 export function MovieCard({ movieImage, height, width }: MovieCardProps) {
@@ -23,7 +24,7 @@ export function MovieCard({ movieImage, height, width }: MovieCardProps) {
         src={movieImage}
         height={height}
         width={width}
-        className="rounded-xl"
+        className="rounded-xl h-auto w-auto"
       />
     </div>
   );
