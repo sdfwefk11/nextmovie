@@ -36,7 +36,11 @@ export function Movies({ movies }: MoviesProps) {
             <Link prefetch href={`/movieinfo/${movie.id}`}>
               <div>
                 <Card>
-                  <MovieCard movieImage={movie.poster_path} />
+                  <MovieCard
+                    height={600}
+                    width={600}
+                    movieImage={movie.poster_path}
+                  />
                 </Card>
               </div>
             </Link>

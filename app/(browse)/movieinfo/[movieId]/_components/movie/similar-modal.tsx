@@ -24,7 +24,7 @@ export function SimilarModal({
 }: SimilarModalProps) {
   return (
     <div
-      onMouseDown={handleOutsideClick}
+      onClick={handleOutsideClick}
       className={cn(
         "fixed w-full flex justify-center items-center h-full inset-x-0 mx-auto inset-y-0 opacity-0 my-auto bg-black z-50 pointer-events-none transition-all -top-10",
         showModal && "opacity-100 bg-opacity-65 pointer-events-auto"
@@ -45,7 +45,11 @@ export function SimilarModal({
                       showModal && "blur-none scale-95"
                     )}
                   >
-                    <MovieCard movieImage={movie.poster_path} />
+                    <MovieCard
+                      width={600}
+                      height={600}
+                      movieImage={movie.poster_path}
+                    />
                   </Card>
                 </div>
               </Link>

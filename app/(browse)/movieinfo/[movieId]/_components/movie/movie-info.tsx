@@ -7,6 +7,7 @@ import { MovieSubInfo, MovieSubInfoSkeleton } from "./movie-sub-info";
 import { MovieHeader, MovieHeaderSkeleton } from "./movie-header";
 import { MovieTagline, MovieTaglineSkeleton } from "./movie-tagline";
 import { getSimilar } from "@/actions/getSimilar";
+import { PreviewImage, PreviewImageSkeleton } from "./preview-image";
 
 interface MovieInfoProps {
   adult: boolean;
@@ -22,6 +23,7 @@ interface MovieInfoProps {
   videos: FetchYoutubeIframeTypes[];
   overview: string;
   id: number;
+  backdropPath: string;
 }
 
 export async function MovieInfo({
@@ -38,6 +40,7 @@ export async function MovieInfo({
   videos,
   overview,
   id,
+  backdropPath,
 }: MovieInfoProps) {
   const similar = await getSimilar(id);
   return (
@@ -47,17 +50,22 @@ export async function MovieInfo({
         homepage={homepage}
         initialLogo={initialLogo}
         initialSimilar={similar || null}
-      />
-      <Separator />
-      <MovieSubInfo
-        language={language}
-        voteAverage={voteAverage}
-        releaseDate={releaseDate}
-        adult={adult}
-        initialRuntime={initialRuntime}
         status={status}
       />
-      <MovieTagline tagline={tagline} />
+      <Separator />
+      <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-y-10">
+        <PreviewImage previewImg={backdropPath} />
+        <div className="space-y-10 flex flex-col justify-center items-center">
+          <MovieSubInfo
+            language={language}
+            voteAverage={voteAverage}
+            releaseDate={releaseDate}
+            adult={adult}
+            initialRuntime={initialRuntime}
+          />
+          <MovieTagline tagline={tagline} />
+        </div>
+      </div>
       <MovieIframe videos={videos} />
       <MovieOverview overview={overview} />
     </div>
@@ -69,8 +77,13 @@ export function MovieInfoSkeleton() {
     <div className="space-y-10 w-full">
       <MovieHeaderSkeleton />
       <Separator />
-      <MovieSubInfoSkeleton />
-      <MovieTaglineSkeleton />
+      <div className="flex flex-col sm:flex-row items-center sm:justify-between justify-center gap-y-10">
+        <PreviewImageSkeleton />
+        <div className="flex flex-col space-y-10">
+          <MovieTaglineSkeleton />
+          <MovieSubInfoSkeleton />
+        </div>
+      </div>
       <MovieIframeSkeleton />
     </div>
   );

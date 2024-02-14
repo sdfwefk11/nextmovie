@@ -1,17 +1,28 @@
+import { ExclamationTriangleIcon } from "@radix-ui/react-icons";
 import Image from "next/image";
 
 interface MovieCardProps {
   movieImage: string;
+  height: number;
+  width: number;
 }
 
-export function MovieCard({ movieImage }: MovieCardProps) {
+export function MovieCard({ movieImage, height, width }: MovieCardProps) {
+  if (!movieImage || movieImage.includes("null")) {
+    return (
+      <div className="flex flex-col items-center justify-center">
+        <ExclamationTriangleIcon className="w-7 h-7 text-red-500" />
+        <p className="text-muted-foreground">Not found image</p>
+      </div>
+    );
+  }
   return (
-    <div className="flex aspect-square items-center justify-center p-1">
+    <div className="flex items-center justify-center border rounded-xl border-[#4d4d50] transition hover:opacity-75">
       <Image
         alt="movie"
         src={movieImage}
-        height={600}
-        width={600}
+        height={height}
+        width={width}
         className="rounded-xl"
       />
     </div>

@@ -1,4 +1,4 @@
-"use serveer";
+"use server";
 import { fetchSimilar } from "@/fetchs/fetch-similar";
 
 export async function getSimilar(movieId: number) {
