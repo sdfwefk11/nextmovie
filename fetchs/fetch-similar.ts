@@ -8,6 +8,6 @@ export interface FetchSimilarTypes {
 
 export async function fetchSimilar(movieId: number) {
   const data = await fetch(`${process.env.API_URL}/${movieId}/similar`);
-  const similar = await data.json();
-  return similar as FetchSimilarTypes[];
+  const similar: FetchSimilarTypes[] = await data.json();
+  return similar;
 }

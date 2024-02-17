@@ -24,7 +24,7 @@ export function MovieCard({ movieImage, height, width }: MovieCardProps) {
         src={movieImage}
         height={height}
         width={width}
-        className="rounded-xl h-auto w-auto"
+        className="rounded-xl"
       />
     </div>
   );
