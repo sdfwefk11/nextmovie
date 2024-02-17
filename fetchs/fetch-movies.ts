@@ -14,6 +14,6 @@ export interface AllMovieTypes {
 
 export async function fetchMovies() {
   const data = await fetch(process.env.API_URL!);
-  const movies = await data.json();
-  return movies as AllMovieTypes[];
+  const movies: AllMovieTypes[] = await data.json();
+  return movies;
 }

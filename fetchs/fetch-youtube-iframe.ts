@@ -13,6 +13,6 @@ export interface FetchYoutubeIframeTypes {
 
 export async function fetchYoutubeIframe(movieId: number) {
   const data = await fetch(`${process.env.API_URL}/${movieId}/videos`);
-  const videos = await data.json();
-  return videos as FetchYoutubeIframeTypes[];
+  const videos: FetchYoutubeIframeTypes[] = await data.json();
+  return videos;
 }
