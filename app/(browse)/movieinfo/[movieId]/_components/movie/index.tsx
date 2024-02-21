@@ -29,6 +29,7 @@ export async function Movie({ movieInfo }: MovieProps) {
             videos={videos}
             overview={movieInfo.overview}
             backdropPath={movieInfo.backdrop_path}
+            genres={movieInfo.genres}
           />
         </div>
       </div>

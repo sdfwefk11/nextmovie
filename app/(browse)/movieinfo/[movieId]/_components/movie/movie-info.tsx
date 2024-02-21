@@ -1,5 +1,8 @@
 import { Separator } from "@/components/ui/separator";
-import { ProductionCompaniesTypes } from "@/fetchs/fetch-movie-detail";
+import {
+  GenresTypes,
+  ProductionCompaniesTypes,
+} from "@/fetchs/fetch-movie-detail";
 import { FetchYoutubeIframeTypes } from "@/fetchs/fetch-youtube-iframe";
 import { MovieOverview } from "./moive-overview";
 import { MovieIframe, MovieIframeSkeleton } from "./movie-iframe";
@@ -8,6 +11,7 @@ import { MovieHeader, MovieHeaderSkeleton } from "./movie-header";
 import { MovieTagline, MovieTaglineSkeleton } from "./movie-tagline";
 import { getSimilar } from "@/actions/getSimilar";
 import { PreviewImage, PreviewImageSkeleton } from "./preview-image";
+import { Genres } from "./genres";
 
 interface MovieInfoProps {
   adult: boolean;
@@ -24,6 +28,7 @@ interface MovieInfoProps {
   overview: string;
   id: number;
   backdropPath: string;
+  genres: GenresTypes[];
 }
 
 export async function MovieInfo({
@@ -41,6 +46,7 @@ export async function MovieInfo({
   overview,
   id,
   backdropPath,
+  genres,
 }: MovieInfoProps) {
   const similar = await getSimilar(id);
   return (
@@ -56,6 +62,7 @@ export async function MovieInfo({
       <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-y-10">
         <PreviewImage previewImg={backdropPath} />
         <div className="space-y-10 flex flex-col justify-center items-center">
+          <MovieTagline tagline={tagline} />
           <MovieSubInfo
             language={language}
             voteAverage={voteAverage}
@@ -63,7 +70,7 @@ export async function MovieInfo({
             adult={adult}
             initialRuntime={initialRuntime}
           />
-          <MovieTagline tagline={tagline} />
+          <Genres genres={genres} />
         </div>
       </div>
       <MovieIframe videos={videos} />
