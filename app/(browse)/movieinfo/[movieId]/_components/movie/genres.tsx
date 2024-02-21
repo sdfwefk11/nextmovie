@@ -50,7 +50,7 @@ export function Genres({ genres }: GenresProps) {
       onMouseMove={onDragMove}
       onMouseUp={onDragEnd}
       onMouseLeave={onDragEnd}
-      className="gap-x-1.5 p-2 flex w-72 overflow-hidden whitespace-nowrap overflow-x-scroll h-auto hidden-scrollbar"
+      className="gap-x-1.5 p-2 flex w-72 overflow-hidden whitespace-nowrap overflow-x-scroll h-auto hidden-scrollbar items-center justify-center"
     >
       {genres.map((data) => (
         <div
