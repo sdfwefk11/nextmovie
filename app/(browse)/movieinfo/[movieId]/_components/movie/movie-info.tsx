@@ -1,5 +1,8 @@
 import { Separator } from "@/components/ui/separator";
-import { ProductionCompaniesTypes } from "@/fetchs/fetch-movie-detail";
+import {
+  GenresTypes,
+  ProductionCompaniesTypes,
+} from "@/fetchs/fetch-movie-detail";
 import { FetchYoutubeIframeTypes } from "@/fetchs/fetch-youtube-iframe";
 import { MovieOverview } from "./moive-overview";
 import { MovieIframe, MovieIframeSkeleton } from "./movie-iframe";
@@ -8,6 +11,7 @@ import { MovieHeader, MovieHeaderSkeleton } from "./movie-header";
 import { MovieTagline, MovieTaglineSkeleton } from "./movie-tagline";
 import { getSimilar } from "@/actions/getSimilar";
 import { PreviewImage, PreviewImageSkeleton } from "./preview-image";
+import { Genres } from "./genres";
 
 interface MovieInfoProps {
   adult: boolean;
@@ -24,6 +28,7 @@ interface MovieInfoProps {
   overview: string;
   id: number;
   backdropPath: string;
+  genres: GenresTypes[];
 }
 
 export async function MovieInfo({
@@ -41,6 +46,7 @@ export async function MovieInfo({
   overview,
   id,
   backdropPath,
+  genres,
 }: MovieInfoProps) {
   const similar = await getSimilar(id);
   return (
@@ -53,17 +59,20 @@ export async function MovieInfo({
         status={status}
       />
       <Separator />
-      <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-y-10">
+      <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-y-10 xl:flex-col 2xl:flex-row">
         <PreviewImage previewImg={backdropPath} />
         <div className="space-y-10 flex flex-col justify-center items-center">
-          <MovieSubInfo
-            language={language}
-            voteAverage={voteAverage}
-            releaseDate={releaseDate}
-            adult={adult}
-            initialRuntime={initialRuntime}
-          />
           <MovieTagline tagline={tagline} />
+          <div className="space-y-1 flex flex-col items-center justify-center">
+            <MovieSubInfo
+              language={language}
+              voteAverage={voteAverage}
+              releaseDate={releaseDate}
+              adult={adult}
+              initialRuntime={initialRuntime}
+            />
+            <Genres genres={genres} />
+          </div>
         </div>
       </div>
       <MovieIframe videos={videos} />
@@ -77,7 +86,7 @@ export function MovieInfoSkeleton() {
     <div className="space-y-10 w-full">
       <MovieHeaderSkeleton />
       <Separator />
-      <div className="flex flex-col sm:flex-row items-center sm:justify-between justify-center gap-y-10">
+      <div className="flex flex-col sm:flex-row items-center sm:justify-between justify-center gap-y-10 xl:flex-col 2xl:flex-row">
         <PreviewImageSkeleton />
         <div className="flex flex-col space-y-10">
           <MovieTaglineSkeleton />

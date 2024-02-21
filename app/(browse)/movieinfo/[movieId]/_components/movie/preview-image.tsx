@@ -25,7 +25,7 @@ export function PreviewImage({ previewImg }: PreviewImageProps) {
         onClick={handleImgClick}
         className="relative flex items-center cursor-pointer group"
       >
-        <MovieCard width={200} height={300} movieImage={previewImg} />
+        <MovieCard width={300} height={300} movieImage={previewImg} />
         <div className="absolute w-full h-full flex justify-end p-2 bg-black rounded-lg bg-opacity-0 hover:bg-opacity-35 transition-all">
           {isImageUrlExist && (
             <EnterFullScreenIcon

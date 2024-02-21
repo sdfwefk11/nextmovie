@@ -15,7 +15,7 @@ export function MovieImage({ backdropPath }: MovieImageProps) {
     }, 50);
   }, []);
   return (
-    <div className="relative rounded-xl border border-[#1d1d1d] overflow-hidden ">
+    <div className="relative rounded-xl border border-[#1d1d1d] overflow-hidden transition-all">
       <div
         style={{
           backgroundImage:
@@ -30,7 +30,7 @@ export function MovieImage({ backdropPath }: MovieImageProps) {
         width={600}
         height={100}
         className={cn(
-          "rounded-xl duration-700 ease-in-out w-auto h-auto",
+          "rounded-xl duration-700 ease-in-out w-auto h-auto transition-all",
           blur && "blur-2xl scale-95"
         )}
       />

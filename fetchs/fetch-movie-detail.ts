@@ -1,4 +1,4 @@
-type GenresTypes = { id: number; name: string };
+export type GenresTypes = { id: number; name: string };
 export type ProductionCompaniesTypes = {
   id: number;
   logo_path: string;
