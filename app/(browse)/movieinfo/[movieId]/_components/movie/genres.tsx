@@ -52,14 +52,13 @@ export function Genres({ genres }: GenresProps) {
       onMouseUp={onDragEnd}
       onMouseLeave={onDragEnd}
       className={cn(
-        "gap-x-1.5 p-2 flex w-72 overflow-hidden whitespace-nowrap overflow-x-scroll h-auto items-center hidden-scrollbar",
-        genres.length < 4 && "justify-center"
+        "gap-x-1.5 p-2 flex w-72 overflow-hidden whitespace-nowrap overflow-x-scroll h-auto items-center hidden-scrollbar rounded-full"
       )}
     >
       {genres.map((data) => (
         <div
           key={data.id}
-          className="border border-yellow-400 from-blue-500 bg-gradient-to-bl to-rose-500 rounded-md px-1.5 flex items-center text-center "
+          className="border border-yellow-400 from-blue-700 bg-gradient-to-bl to-rose-700 rounded-md px-1.5 flex items-center text-center shadow shadow-yellow-600"
         >
           <p className="text-sm text-white/75 font-semibold uppercase">
             {data.name}

@@ -63,7 +63,7 @@ export async function MovieInfo({
         <PreviewImage previewImg={backdropPath} />
         <div className="space-y-10 flex flex-col justify-center items-center">
           <MovieTagline tagline={tagline} />
-          <div className="space-y-1">
+          <div className="space-y-1 flex flex-col items-center justify-center">
             <MovieSubInfo
               language={language}
               voteAverage={voteAverage}
