@@ -59,18 +59,20 @@ export async function MovieInfo({
         status={status}
       />
       <Separator />
-      <div className="flex flex-col sm:flex-row justify-center sm:justify-between items-center gap-y-10">
+      <div className="flex flex-col md:flex-row justify-center md:justify-between items-center gap-y-10 xl:flex-col 2xl:flex-row">
         <PreviewImage previewImg={backdropPath} />
         <div className="space-y-10 flex flex-col justify-center items-center">
           <MovieTagline tagline={tagline} />
-          <MovieSubInfo
-            language={language}
-            voteAverage={voteAverage}
-            releaseDate={releaseDate}
-            adult={adult}
-            initialRuntime={initialRuntime}
-          />
-          <Genres genres={genres} />
+          <div className="space-y-1">
+            <MovieSubInfo
+              language={language}
+              voteAverage={voteAverage}
+              releaseDate={releaseDate}
+              adult={adult}
+              initialRuntime={initialRuntime}
+            />
+            <Genres genres={genres} />
+          </div>
         </div>
       </div>
       <MovieIframe videos={videos} />
@@ -84,7 +86,7 @@ export function MovieInfoSkeleton() {
     <div className="space-y-10 w-full">
       <MovieHeaderSkeleton />
       <Separator />
-      <div className="flex flex-col sm:flex-row items-center sm:justify-between justify-center gap-y-10">
+      <div className="flex flex-col sm:flex-row items-center sm:justify-between justify-center gap-y-10 xl:flex-col 2xl:flex-row">
         <PreviewImageSkeleton />
         <div className="flex flex-col space-y-10">
           <MovieTaglineSkeleton />
