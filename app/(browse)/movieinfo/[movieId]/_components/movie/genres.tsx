@@ -58,11 +58,9 @@ export function Genres({ genres }: GenresProps) {
       {genres.map((data) => (
         <div
           key={data.id}
-          className="border border-yellow-400 from-blue-700 bg-gradient-to-bl to-rose-700 rounded-md px-1.5 flex items-center text-center shadow shadow-yellow-600"
+          className="border rounded-md px-1.5 flex items-center text-center bg-white/20 border-white/30 shadow"
         >
-          <p className="text-sm text-white/75 font-semibold uppercase">
-            {data.name}
-          </p>
+          <p className="text-sm  font-semibold ">{data.name}</p>
         </div>
       ))}
     </div>
